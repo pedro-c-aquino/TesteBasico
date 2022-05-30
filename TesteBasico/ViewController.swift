@@ -8,12 +8,34 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
+    var name: String = ""
+    var email: String = ""
+    
+    @IBOutlet weak var nameTextField: UITextField!
+    
+    @IBOutlet weak var emailTextField: UITextField!
+    
+    @IBOutlet weak var nameLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
     }
 
-
+    @IBAction func showNameButton(_ sender: UIButton) {
+        name = nameTextField.text ?? ""
+        email = emailTextField.text ?? ""
+        
+        if name == "" {
+            nameLabel.text = "Nome"
+        } else {
+            nameLabel.text = name
+        }
+        
+        print(email)
+        
+        
+    }
+    
 }
 
